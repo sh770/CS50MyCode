@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/index.css" />
+    <title>Home page</title>
+  </head>
+  <body>
+    <div class="centered">
+      <main>
+        <h1>Welcome to my flask app!</h1>
+        <p>
+          Flask is a framework for building backends for web applications in
+          python. <br />This is the Home Page of my first flask application.
+        </p>
+        <br />
+        <br />
+        <a class="button" href="{{ url_for('about')}}"> About page </a>
+
+        <br />
+        <br />
+        <!-- כפתור לניתוק -->
+        <form method="GET" action="/logout">
+          <input class="button" type="submit" value="Logout" />
+        </form>
+       
+      </main>
+    </div>
+  </body>
+</html>

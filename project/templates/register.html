@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/index.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="centered">
+      <main>
+        <h1>Register</h1>
+        <form action="{{ url_for('register') }}" method="post">
+          <label for="username">Username:</label><br />
+          <input type="text" id="username" name="username" required /><br />
+
+          <label for="password">Password:</label><br />
+          <input type="password" id="password" name="password" required /><br />
+          <br />
+          <button class="button" type="submit">Register</button>
+
+          {% if error %}
+          <p class="error">{{ error | tojson }}</p>
+          {% endif %}
+        </form>
+        <br />
+        <a class="button" href="{{ url_for('login')}}">Login</a>
+      </main>
+    </div>
+  </body>
+</html>
